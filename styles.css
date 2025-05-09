@@ -1,6 +1,6 @@
 #main{
-    width: 700px;
-    height: 700px; 
+    width: 500px;
+    height: 500px; 
     background-color: #F5F7FB;
     color: #293264;
 
@@ -22,7 +22,7 @@ cursor: pointer;
 font-size: 1.2em;
 }
 
-#quiz{
+.quiz{
     display: none;
     /* width: 550px;
     height: 550px; */
@@ -36,10 +36,12 @@ font-size: 1.2em;
     color: white;
     border: none;
     border-radius: 15px;
-    width: 300px;
+    width: 450px;
     height: 60px;
 cursor: pointer;
 font-size: 1.2em;
+
+
 }
 .modal {
     display: none;
@@ -123,4 +125,17 @@ text-align: center;
     animation: fadeInUp 0.6s ease-out;
     font-weight: bold;
     font-size: 24px;
+  }
+
+  @media (min-width:600px){
+    #main{
+        width: 100%;
+    }
+#quiz{
+    background-color: #F5F7FB;
+
+
+  }
+ 
+
   }

@@ -16,7 +16,7 @@ main.style.display = "none";
 function calculateScore() {
     const correctAnswers = {
         q1: "sugar",
-        q2: "bag",
+        q2: "candy",
         q3: "mixcoffee",
         q4: "ninesix",
         q5: "coat"
@@ -36,6 +36,8 @@ function calculateScore() {
     return { correctCount, totalScore };
 }
 
+
+
 finishBtn.addEventListener("click", function(e){
     e.preventDefault();
 
@@ -48,10 +50,11 @@ finishBtn.addEventListener("click", function(e){
 <div id="totalscore">
 <h2>당신의 결과는!</h2>
     <h2>총 ${scoreData.correctCount}문제 정답!</h2>
-    <h2> 점수는 ${scoreData.totalScore}점입니다 🎉</h2>
+    <h2 id="scoreNumber"> 점수는 ${scoreData.totalScore}점입니다 🎉</h2>
 </div>
     `;
 
+    animateScore(scoreData.totalScore);
 
     setTimeout(() => {
         const modalInner = document.getElementById("modal-inner");
@@ -105,8 +108,8 @@ finishBtn.addEventListener("click", function(e){
                 return;
             }
     
-            message.style.color = "green";
-            message.textContent = "응모가 완료되었습니다! 감사합니다 😊";
+            
+            alert("응모가 완료되었습니다! 감사합니다 😊");
             form.reset();
         });
         const modalCloseBtn = document.getElementById("modal-close-btn");
@@ -114,18 +117,33 @@ modalCloseBtn.disabled = false;
 
 modalCloseBtn.addEventListener("click", function () {
     modal.style.display = "none";
-    quiz.style.display = "none";;
+
 });
 
-    }, 3000);
+    }, 4000);
  
-
-
-
-
 });
 
+function animateScore(finalScore) {
+    const scoreElement = document.getElementById("scoreNumber");
 
+    if (finalScore === 0) {
+        scoreElement.innerText = `점수는 0점입니다 🎉`;
+        return;
+    }
+
+    let score = 0;
+    scoreElement.classList.add("score-animate");
+
+    const interval = setInterval(() => {
+        score++;
+        scoreElement.innerText = `점수는 ${score}점입니다 🎉`;
+        
+        if (score === finalScore) {
+            clearInterval(interval);
+        }
+    }, 30);
+}
 
 const emotionRadios = document.getElementById("quiz");
 

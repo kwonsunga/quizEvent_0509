@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+<h1>기억 속 여행, 퀴즈로 떠나볼까요?</h1>
+<h3>잊고 지냈던 추억을 꺼내보는 시간!</h3>
+<button id="startbtn">시작하기</button>
+    </div>
+    <form id="quiz">
+        
+            <h3>1. 1970~1980년대 인기 간식 중 하나인 '뽑기'의 재료는?</h3>
+            <label class="radio">
+            <input type="radio" name="q1" id="q1-a1" value="sugar" />
+          설탕
+        </label>
+        <label class="radio">
+          <input type="radio" name="q1" id="q1-a2" value="Flour" />
+          밀가루
+        </label>
+        <label class="radio">
+          <input type="radio" name="q1" id="q1-a3" value="Been" />
+          콩가루
+        </label>
+        <label class="radio">
+          <input type="radio" name="q1" id="q1-a4" value="Honey" />
+          꿀
+        </label>
+
+        
+            <h3>2. 옛날 국민학교 입학식 날, 학생들이 가장 많이 받았던 선물은?</h3>
+            <label class="radio">
+            <input type="radio" name="q2" id="q2-a1" value="Balloon" />
+          풍선
+        </label>
+        <label class="radio">
+          <input type="radio" name="q2" id="q2-a2" value="Bag" />
+          책가방
+        </label>
+        <label class="radio">
+          <input type="radio" name="q2" id="q2-a3" value="candy" />
+          사탕
+        </label>
+        <label class="radio">
+          <input type="radio" name="q2" id="q2-a4" value="Lunchbox" />
+          도시락통
+        </label>
+
+        
+            <h3>3. 다음 중 예전에 '다방'에서 자주 마셨던 음료는?</h3>
+            <label class="radio">
+          <input type="radio" name="q3" id="q3-a1" value="America" />
+          아메리카노
+        </label>
+        <label class="radio">
+          <input type="radio" name="q3" id="q3-a2" value="mixcoffee" />
+          믹스커피
+        </label>
+        <label class="radio">
+          <input type="radio" name="q3" id="q3-a3" value="Latte" />
+          녹차라떼
+        </label>
+        <label class="radio">
+          <input type="radio" name="q3" id="q3-a4" value="Coldbru" />
+          콜드브루
+        </label>
+
+        
+            
+        <h3>4. '국민학교'라는 용어는 언제 '초등학교'로 바뀌었을까요?</h3>
+        <label class="radio">
+          <input type="radio" name="q4" id="q4-a1" value="eightnine" />
+          1986년
+        </label>
+        <label class="radio">
+          <input type="radio" name="q4" id="q4-a2" value="nineone" />
+          1990년
+        </label>
+        <label class="radio">
+          <input type="radio" name="q4" id="q4-a3" value="ninesix" />
+          1996년
+        </label>
+        <label class="radio">
+          <input type="radio" name="q4" id="q4-a4" value="zerozero" />
+          2000년
+        </label>
+
+        
+            <h3>5. 다음 중 예전 교복 스타일과 가장 관련 있는 단어는?</h3>
+            <label class="radio">
+            <input type="radio" name="q5" id="q5-a1" value="cago" />
+          카고 바지
+        </label>
+        <label class="radio">
+          <input type="radio" name="q5" id="q5-a2" value="napal" />
+          나팔 바지
+        </label>
+        <label class="radio">
+          <input type="radio" name="q5" id="q5-a3" value="coat" />
+          떡볶이 코트
+        </label>
+        <label class="radio">
+          <input type="radio" name="q5" id="q5-a4" value="shose" />
+          고무신
+        </label>
+        <br>
+        <button id="finishbtn">결과보기</button>
+
+    </form>
+
+      <div class="modal" id="modal">
+        <div class="close-modal-btn-container">
+          <button class="modal-close-btn" id="modal-close-btn" disabled>X</button>
+        </div>
+        <div class="modal-inner" id="modal-inner">
+          <!-- <h2 class="scoretext">당신의 점수는!</h2> -->
+          <p id="scoreDisplay"></p>
+          <!-- <h2>경품 응모</h2>
+          <form id="consent-form">
+            <input type="text" name="fullName" placeholder="이름" required/>
+            <input type="email" name="Email" placeholder="이메일" required/>
+            <input type="tel" name="phone" placeholder="전화번호" required/>
+            <button type="submit">응모하기</button>
+          </form> -->
+        </div>
+    </div>
+
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>

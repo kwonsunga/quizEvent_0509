@@ -61,10 +61,12 @@ finishBtn.addEventListener("click", function(e){
         modalInner.innerHTML = `
             <form id="form">
                 <h2 id ="gifttext">경품 응모 🎉</h2>
+                <img id=giftimage src="gift.png"/>
                 <input type="text" id="name" name="name" placeholder="이름" required/>
                 <input type="email" id="email" name="email" placeholder="이메일" required/>
                 <input type="tel" id="phone" name="phone" placeholder="전화번호" required/>
                 <button type="submit" id="submitbtn">응모하기</button>
+                <p id=popuptext> <b>※ 입력하신 정보는 경품 발송 및 이벤트 안내 용도로만 사용됩니다.</b></p>
                 <p id="form-message" style="margin-top: 10px; font-weight: bold;"></p>
             </form>
         `;

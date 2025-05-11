@@ -127,12 +127,40 @@ text-align: center;
     font-size: 24px;
   }
 
-  @media (min-width:600px){
-    #main{
-        width: 100%;
+  @media screen and (min-width: 700px) {
+    #main {
+width: 100%;
+    }
+    
+    #quiz-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    #quiz {
+      width: 100%;
+      max-width: 600px;
+      padding: 2em;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    #finishbtn{
+margin: 1em;
+      width: 100%;
+
+
     }
 
-
- 
-
-  }
+      #name,
+      #email,
+      #phone {
+        width: 100%;
+        font-size: 1em;
+        padding: 0.5em;
+        margin-top: 0.5em;
+      }
+      
+    }
+  

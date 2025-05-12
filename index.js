@@ -5,6 +5,7 @@ const finishBtn = document.getElementById("finishbtn");
 const modal = document.getElementById("modal");
 const scoreDisplay = document.getElementById("scoreDisplay");
 const modalCloseBtns = document.getElementById("modal-close-btns");
+const radios = document.querySelectorAll('input[type="radio"]');
 
 startBtn.addEventListener("click", function(){
 main.style.display = "none";
@@ -41,9 +42,30 @@ function calculateScore() {
 finishBtn.addEventListener("click", function(e){
     e.preventDefault();
 
+        const radios = document.querySelectorAll('input[type="radio"]');
+    let allAnswered = true;  
+
+
+    for (let i = 0; i < radios.length; i++) {
+        const radio = radios[i];
+        const questionName = radio.name;  
+        
+       
+        if (!document.querySelector(`input[name="${questionName}"]:checked`)) {
+            allAnswered = false;
+            break;  
+        }
+    }
+
+   
+    if (!allAnswered) {
+        alert("모든 문제를 선택해주세요.");
+        return;  
+    }
+
     main.style.display = "none";
     modal.style.display = "block";
-
+    
     const scoreData = calculateScore();
     scoreDisplay.innerHTML = 
     `
@@ -113,14 +135,22 @@ finishBtn.addEventListener("click", function(e){
             
             alert("응모가 완료되었습니다! 감사합니다 😊");
             form.reset();
+
+            modal.style.display = "none";
+            quiz.style.display = "none";
+            main.style.display = "block";
+             main.style.textAlign = "center";
         });
+
         const modalCloseBtn = document.getElementById("modal-close-btn");
 modalCloseBtn.disabled = false;
 
-modalCloseBtn.addEventListener("click", function () {
-    modal.style.display = "none";
+// modalCloseBtn.addEventListener("click", function () {
+//     modal.style.display = "none";
+    
 
-});
+// });
+
 
     }, 4000);
  
